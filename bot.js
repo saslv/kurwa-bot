@@ -42,6 +42,10 @@ bot.onText(/300/, function (msg) {
     bot.sendMessage(msg.chat.id, '@' + msg.from.username + ', відсоси у тракториста!');
 });
 
+bot.onText(/триста/, function (msg) {
+    bot.sendMessage(msg.chat.id, '@' + msg.from.username + ', відсоси у тракториста!');
+});
+
 bot.onText(/\/swear/, function (msg) {
     //todo add swear generator
     bot.sendMessage(msg.chat.id, 'JA PIERDOLE');
