@@ -51,9 +51,24 @@ bot.onText(/\/swear/, function (msg) {
     bot.sendMessage(msg.chat.id, 'JA PIERDOLE');
 });
 
+var re = /\s*([-+]?[0-9]*\.?[0-9]+)\s*([\/\+\-\*])(\s*)+([-+]?[0-9]*\.?[0-9]+)\s*/;
+
+bot.onText(re, function (msg) {
+    var matches = re.exec(msg.text);
+
+    if(matches){
+        var result = eval(re.exec(msg.text)[0]);
+        if(result == 300){
+            bot.sendMessage(msg.chat.id, '@' + msg.from.username + ', відсоси у тракториста! (' + matches[0] + ')');
+        }else{
+            bot.sendMessage(msg.chat.id, '@' + msg.from.username + ', можливо я допоможу тобі обчисливши (' + matches[0] + ') = ' + result);
+        }
+    }
+
+});
+
 if(config.isDebug){
     bot.on('message', function(msg){
         console.log(msg.text, msg.chat.title, msg.from.username);
     });
 }
-
