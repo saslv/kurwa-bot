@@ -36,7 +36,7 @@ bot.onText(/\/hikurwa/, function (msg) {
 });
 
 bot.onText(/\/version/, function (msg) {
-    bot.sendMessage(msg.chat.id, 'Версія: ' + version.number + '. \r\nЩо нового: ' + version.message + '.');
+    bot.sendMessage(msg.chat.id, 'Версія: ' + version.number + '. \r\nЩо нового: ' + version.message + '.', {parse_mode: 'Markdown'});
 });
 
 bot.onText(/курва/, function (msg) {
