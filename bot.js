@@ -1,6 +1,7 @@
 var TelegramBot = require('node-telegram-bot-api');
 
 var config = require('./config');
+var version = require('./version');
 
 var bot = new TelegramBot(config.token, {polling: true});
 var sqlite3 = require('sqlite3').verbose();
@@ -32,6 +33,10 @@ bot.onText(/\/shnur/, function (msg) {
 
 bot.onText(/\/hikurwa/, function (msg) {
     bot.sendMessage(msg.chat.id, 'JA PIERDOLE');
+});
+
+bot.onText(/\/version/, function (msg) {
+    bot.sendMessage(msg.chat.id, 'Версія: ' + version.number + '. Що нового: ' + version.message + '.');
 });
 
 bot.onText(/курва/, function (msg) {
