@@ -28,6 +28,12 @@ db.serialize(function() {
 
 //db.close();
 
+var sick_array = ['хворий виблядок', 'огидна тварина', 'страшна істота', 'стрьомне чмо'];
+
+function random_array_val(items){
+	return items[Math.floor(Math.random()*items.length)];
+}
+
 bot.onText(/\/shnur/, function (msg) {
     var chatId = msg.chat.id;
     var photo = 'images/shnur.jpg';
@@ -46,8 +52,9 @@ bot.onText(/300|триста/, function (msg) {
     bot.sendMessage(msg.chat.id, '@' + msg.from.username + ', відсоси у тракториста!');
 });
 
-bot.onText(/amputee|porn|гімно|кров|кишки|shit/, function (msg) {
-    bot.sendMessage(msg.chat.id, '@' + msg.from.username + ', хворий виблядок!');
+bot.onText(/amputee|porn|гімно|кров|кишки|shit|gay|говно|говне|гей/, function (msg) {
+	var message = random_array_val(sick_array);
+    bot.sendMessage(msg.chat.id, '@' + msg.from.username + ', ' + message + '!');
 });
 
 bot.onText(/\/swear/, function (msg) {
