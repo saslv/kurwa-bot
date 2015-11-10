@@ -34,7 +34,7 @@ bot.onText(/\/shnur/, function (msg) {
     bot.sendPhoto(chatId, photo, {caption: 'Шнур'});
 });
 
-bot.onText(/\/hikurwa/, function (msg) {
+bot.onText(/\/hikurwa|курва/, function (msg) {
     bot.sendMessage(msg.chat.id, 'JA PIERDOLE');
 });
 
@@ -42,23 +42,11 @@ bot.onText(/\/version/, function (msg) {
     bot.sendMessage(msg.chat.id, 'Версія: ' + version.number + '. \r\nЩо нового: ' + version.message + '.', {parse_mode: 'Markdown'});
 });
 
-bot.onText(/курва/, function (msg) {
-    bot.sendMessage(msg.chat.id, 'JA PIERDOLE');
-});
-
-bot.onText(/300/, function (msg) {
+bot.onText(/300|триста/, function (msg) {
     bot.sendMessage(msg.chat.id, '@' + msg.from.username + ', відсоси у тракториста!');
 });
 
-bot.onText(/триста/, function (msg) {
-    bot.sendMessage(msg.chat.id, '@' + msg.from.username + ', відсоси у тракториста!');
-});
-
-bot.onText(/amputee/, function (msg) {
-    bot.sendMessage(msg.chat.id, '@' + msg.from.username + ', хворий виблядок!');
-});
-
-bot.onText(/porn/, function (msg) {
+bot.onText(/amputee|porn|гімно|кров|кишки|shit/, function (msg) {
     bot.sendMessage(msg.chat.id, '@' + msg.from.username + ', хворий виблядок!');
 });
 
