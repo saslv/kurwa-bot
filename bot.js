@@ -6,7 +6,7 @@ var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('bot.sqlite');
 
 var version = {
-    number: shell.exec('git rev-list HEAD --count', {silent: true}).output.replace(/(\n|\r)+$/, ''),
+    number: shell.exec('git log --pretty=oneline | wc -l', {silent: true}).output.replace(/(\n|\r)+$/, ''),
     message: shell.exec('git log -1 --pretty=%B', {silent: true}).output.replace(/(\n|\r)+$/, '')
 }
 
